@@ -10,8 +10,12 @@ const TodoItem = memo(({ id, title, completed }) => {
 
   const submit = (e) => {
     e.preventDefault();
-    changeTodo(newTitle, id);
-    setEdit(false);
+    if (newTitle === "") {
+      alert("The field cannot be empty!");
+    } else {
+      changeTodo(newTitle, id);
+      setEdit(false);
+    }
   };
 
   const handleChangeInput = (e) => setNewTitle(e.target.value);
@@ -35,7 +39,7 @@ const TodoItem = memo(({ id, title, completed }) => {
         {edit ? (
           <form onSubmit={submit}>
             <input
-            className="input-edit"
+              className="input-edit"
               type="text"
               value={newTitle}
               onChange={handleChangeInput}
