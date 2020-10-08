@@ -46,6 +46,7 @@ header {
   align-items: center;
   padding: 60px 30px 60px 50px;
   background: linear-gradient(#2cc4df, #14ebce);
+  background-size: cover;
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
 }

@@ -15,7 +15,7 @@ const Form = memo(({ todoTitle, setTodoTitle, addTodo, text }) => {
           type="text"
           value={todoTitle}
           onChange={handleChange}
-          placeholder="Add to do..."
+          placeholder="Enter title..."
         />
       </div>
       <div className="btn-container">
