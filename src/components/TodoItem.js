@@ -6,21 +6,21 @@ import img from "../assets/delete.svg";
 const TodoItem = memo(({ id, title, completed }) => {
   const [edit, setEdit] = useState(false);
   const [newTitle, setNewTitle] = useState(title);
-  const { removeTodo, toggleTodo, changeTodo } = useContext(Context);
+  const { remove, toggle, change } = useContext(Context);
 
   const submit = (e) => {
     e.preventDefault();
     if (newTitle === "") {
       alert("The field cannot be empty!");
     } else {
-      changeTodo(newTitle, id);
+      change(newTitle, id);
       setEdit(false);
     }
   };
 
   const handleChangeInput = (e) => setNewTitle(e.target.value);
 
-  const handleChange = () => toggleTodo(id);
+  const handleChange = () => toggle(id);
 
   const getChange = () => setEdit(!edit);
 
@@ -71,7 +71,7 @@ const TodoItem = memo(({ id, title, completed }) => {
           </button>
         </div>
         <div>
-          <button className="icon-btn" onClick={() => removeTodo(id)}>
+          <button className="icon-btn" onClick={() => remove(id)}>
             <img src={img} alt="" />
           </button>
         </div>

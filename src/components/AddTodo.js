@@ -4,7 +4,7 @@ import Form from "./Form";
 
 
 
-const AddTodo = memo(({ isOpen, closeModal, todoTitle, setTodoTitle, addTodo }) => {
+const AddTodo = memo(({ isOpen, closeModal, todoTitle, setTodoTitle, add }) => {
   return (
     <Modal
       className="modal"
@@ -16,7 +16,7 @@ const AddTodo = memo(({ isOpen, closeModal, todoTitle, setTodoTitle, addTodo }) 
       <Form
         todoTitle={todoTitle}
         setTodoTitle={setTodoTitle}
-        addTodo={addTodo}
+        add={add}
         text="ADD"
       />
     </Modal>
