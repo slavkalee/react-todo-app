@@ -5,6 +5,7 @@ import store from './redux/store'
 
 import "./index.css";
 import App from "./App";
+import "react-circular-progressbar/dist/styles.css";
 
 ReactDOM.render(
   <Provider store={store}>

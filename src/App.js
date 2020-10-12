@@ -6,7 +6,7 @@ import Header from "./components/Header";
 import TodoList from "./components/TodoList";
 import Button from "./components/Button";
 import AddTodo from "./components/AddTodo";
-import { addTodo, removeTodo, toggleTodo, changeTodo } from "./redux/action";
+import { addTodo, removeTodo, toggleTodo, changeTodo } from "./redux/actions";
 
 const App = () => {
   const todos = useSelector((state) => state.todos);
@@ -40,10 +40,25 @@ const App = () => {
 
   const toggle = useCallback((id) => dispatch(toggleTodo(id)), [dispatch]);
 
+  const completedCount = todos.filter((todo) => {
+    if (todo.completed === true) {
+      return true;
+    }
+    return false;
+  });
+
+  function getProcent(count, totalCount) {
+    const procent = (count / totalCount) * 100;
+    console.log(count, totalCount);
+    return Math.round(procent);
+  }
+
+  const proc = getProcent(completedCount.length, todos.length);
+
   return (
     <Context.Provider value={{ remove, toggle, change }}>
       <div className="container">
-        <Header />
+        <Header procent={proc} />
         {todos.length ? (
           <TodoList data={todos} />
         ) : (

@@ -1,4 +1,9 @@
-import { ADD_TODO, TOGGLE_TODO, REMOVE_TODO, CHANGE_TODO } from "../actionType";
+import {
+  ADD_TODO,
+  TOGGLE_TODO,
+  REMOVE_TODO,
+  CHANGE_TODO,
+} from "../actionTypes";
 
 const initialData = [];
 

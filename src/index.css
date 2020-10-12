@@ -18,7 +18,7 @@ ul {
   padding: 0;
   margin: 0;
   list-style: none;
-  height: 525px;
+  height: 515px;
   overflow-y: auto;
   padding: 0 30px;
 }
@@ -27,48 +27,64 @@ li {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 35px 0;
-  height: 35px;
+  margin: 25px 0;
+  height: 45px;
 }
 
 .container {
   width: 500px;
-  height: 700px;
+  height: 750px;
   background: #fff;
   box-shadow: 0px 4px 58px rgba(119, 121, 120, 0.25);
   position: relative;
-  border-radius: 25px;
 }
 
 header {
   background-image: url(./assets/bg2.jpg);
   background-size: cover;
   background-position: center;
-  border-top-left-radius: 25px;
-  border-top-right-radius: 25px;
-  height: 170px;
+  height: 200px;
 }
 
 .overlay {
   display: flex;
   justify-content: space-between;
   height: 100%;
-  padding: 30px;
-  background: linear-gradient( 10deg, rgb(44, 196, 223,0.4) 0%, rgb(20, 235, 206, 0.7) 100% );
-  border-top-left-radius: 25px;
-  border-top-right-radius: 25px;
 }
 
 .left {
+  position: relative;
+  width: 60%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding: 20px 30px;
+  background: linear-gradient( 10deg, rgba(8, 209, 245, 0.4) 0%, rgba(31, 150, 134, 0.7) 100% );
+}
+
+.left::after {
+  content: '';
+  width: 100%;
+  height: 5px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: linear-gradient( 10deg, rgba(0, 217, 255, 0.4) 0%, rgba(6, 228, 217, 0.7) 100% );
 }
 
 .right {
+  width: 40%;
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
   justify-content: space-between;
+  padding: 20px 30px;
+  background: linear-gradient( 30deg, rgba(44, 131, 143, 0.637) 50%, rgba(16, 172, 151, 0.7) 100% );
+}
+
+.top {
+  display: flex;
+  flex-direction: column;
   align-items: flex-end;
 }
 
@@ -81,6 +97,7 @@ header {
 .date {
   font-size: 12px;
   color: rgb(229, 226, 226);
+  letter-spacing: 0.5px;
 }
 
 .day-number {
@@ -108,6 +125,7 @@ header {
   letter-spacing: 2px;
   text-transform: uppercase;
   color: #fff;
+  margin-top: 10px;
 }
 
 .time {
@@ -115,6 +133,7 @@ header {
   font-weight: 500;
   color: #fff;
   margin-top: 10px;
+  white-space: nowrap;
 }
 
 .left-block {
@@ -144,7 +163,7 @@ header {
 .circle-btn::after {
   --scale: 0;
   --arrow-size: 15px;
-  --tooltip-color: linear-gradient(#2cc4df, #14ebce);
+  --tooltip-color: linear-gradient(#2cc4df, #00fff2);
 
   position: absolute;
   top: -.25rem;
@@ -175,7 +194,7 @@ header {
   --translate-y: calc(-1 * var(--arrow-size));
   content: '';
   border: var(--arrow-size) solid transparent;
-  border-top-color: #14ebce;
+  border-top-color: #00fff2;
   transform-origin: top center;
 }
 
@@ -190,7 +209,7 @@ header {
   background: linear-gradient(rgb(44, 196, 223), rgb(20, 235, 206));
   color: #fff;
   transition: 0.5s;
-  box-shadow: 0px 4px 58px rgba(109, 197, 238, 0.55);
+  box-shadow: 0px 4px 58px rgba(0, 255, 255, 0.55);
 }
 
 .btn-add:hover {
@@ -335,7 +354,7 @@ input[type="checkbox"]:checked:after {
   font-size: 20px;
   color: #fff;
   margin-left: 10px;
-  padding: 5px 10px 10px;
+  padding: 10px;
   outline: 0;
   border: 0;
   border-radius: 15px;
@@ -347,3 +366,22 @@ input[type="checkbox"]:checked:after {
   text-align: center;
   margin-top: 60px;
 }
+
+.progress {
+  display: flex;
+  align-items: center;
+  width: 95px;
+  justify-content: space-between;
+}
+
+.progress-bar {
+  width: 25px;
+  height: 25px;
+}
+
+.progress-text {
+  margin-left: 10px;
+  color: #fff;
+  font-size: 12px;
+}
+
