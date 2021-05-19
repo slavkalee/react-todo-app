@@ -199,6 +199,7 @@ header {
 }
 
 .btn-add {
+  position: relative;
   cursor: pointer;
   width: 100%;
   height: 100%;
@@ -214,6 +215,13 @@ header {
 
 .btn-add:hover {
   background: linear-gradient(#61cde0, #3dfae1);
+}
+
+.btn-add__text {
+  position: absolute;
+  left: 50%;
+  top: 44%;
+  transform: translate(-44%, -50%);
 }
 
 .modal {
