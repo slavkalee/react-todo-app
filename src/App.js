@@ -1,18 +1,18 @@
-import React, { useState, useCallback } from "react";
-import { Context } from "./context";
-import { useSelector, useDispatch } from "react-redux";
+import React, { useState, useCallback } from 'react';
+import { Context } from './context';
+import { useSelector, useDispatch } from 'react-redux';
 
-import Header from "./components/Header";
-import TodoList from "./components/TodoList";
-import Button from "./components/Button";
-import AddTodo from "./components/AddTodo";
-import { addTodo, removeTodo, toggleTodo, changeTodo } from "./redux/actions";
+import Header from './components/Header';
+import TodoList from './components/TodoList';
+import Button from './components/Button';
+import AddTodo from './components/AddTodo';
+import { addTodo, removeTodo, toggleTodo, changeTodo } from './redux/actions';
 
 const App = () => {
   const todos = useSelector((state) => state.todos);
   const dispatch = useDispatch();
 
-  const [todoTitle, setTodoTitle] = useState("");
+  const [todoTitle, setTodoTitle] = useState('');
   const [isOpen, setOpen] = useState(false);
 
   const openModal = useCallback(() => setOpen(true), [setOpen]);
@@ -27,12 +27,12 @@ const App = () => {
   );
 
   const add = useCallback(() => {
-    if (todoTitle === "") {
-      alert("The field cannot be empty!");
+    if (todoTitle === '') {
+      alert('The field cannot be empty!');
     } else {
       dispatch(addTodo(todoTitle));
       setOpen(false);
-      setTodoTitle("");
+      setTodoTitle('');
     }
   }, [todoTitle, dispatch]);
 
@@ -49,7 +49,6 @@ const App = () => {
 
   function getProcent(count, totalCount) {
     const procent = (count / totalCount) * 100;
-    console.log(count, totalCount);
     return Math.round(procent);
   }
 

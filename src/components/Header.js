@@ -1,10 +1,7 @@
-import React, { useEffect, useState } from "react";
-import moment from "moment";
+import React, { useEffect, useState } from 'react';
+import moment from 'moment';
 
-import {
-  CircularProgressbar,
-  buildStyles,
-} from "react-circular-progressbar";
+import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 
 const Header = ({ procent }) => {
   const [date, setDate] = useState(new Date());
@@ -15,11 +12,11 @@ const Header = ({ procent }) => {
     }, 1000);
   }, []);
 
-  const dayNum = (date) => moment(date).format("DD");
-  const month = (date) => moment(date).format("MMMM").slice(0, 3);
-  const fullYear = (date) => moment(date).format("YYYY");
-  const dayOfWeek = (date) => moment(date).format("dddd");
-  const time = (date) => moment(date).format("HH : mm : ss");
+  const dayNum = (date) => moment(date).format('DD');
+  const month = (date) => moment(date).format('MMMM').slice(0, 3);
+  const fullYear = (date) => moment(date).format('YYYY');
+  const dayOfWeek = (date) => moment(date).format('dddd');
+  const time = (date) => moment(date).format('HH : mm : ss');
 
   return (
     <header>
@@ -45,13 +42,15 @@ const Header = ({ procent }) => {
                 value={procent}
                 strokeWidth={10}
                 styles={buildStyles({
-                  strokeLinecap: "butt",
-                  pathColor: "rgb(0, 243, 252)",
-                  trailColor: "#fff",
+                  strokeLinecap: 'butt',
+                  pathColor: 'rgb(0, 243, 252)',
+                  trailColor: '#fff',
                 })}
               />
             </div>
-            <div className="progress-text">{!procent ? '0' : procent}% done</div>
+            <div className="progress-text">
+              {!procent ? '0' : procent}% done
+            </div>
           </div>
         </div>
       </div>

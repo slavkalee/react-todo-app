@@ -1,7 +1,7 @@
-import React, { memo, useContext, useState } from "react";
-import { Context } from "../context";
+import React, { memo, useContext, useState } from 'react';
+import { Context } from '../context';
 
-import img from "../assets/delete.svg";
+import img from '../assets/delete.svg';
 
 const TodoItem = memo(({ id, title, completed }) => {
   const [edit, setEdit] = useState(false);
@@ -10,8 +10,8 @@ const TodoItem = memo(({ id, title, completed }) => {
 
   const submit = (e) => {
     e.preventDefault();
-    if (newTitle === "") {
-      alert("The field cannot be empty!");
+    if (newTitle === '') {
+      alert('The field cannot be empty!');
     } else {
       change(newTitle, id);
       setEdit(false);
@@ -24,10 +24,10 @@ const TodoItem = memo(({ id, title, completed }) => {
 
   const getChange = () => setEdit(!edit);
 
-  const cls = ["title-todo"];
+  const cls = ['title-todo'];
 
   if (completed) {
-    cls.push("completed");
+    cls.push('completed');
   }
 
   return (
@@ -47,7 +47,7 @@ const TodoItem = memo(({ id, title, completed }) => {
             />
           </form>
         ) : (
-          <div className={cls.join(" ")}>{title}</div>
+          <div className={cls.join(' ')}>{title}</div>
         )}
       </div>
       <div className="right-block">

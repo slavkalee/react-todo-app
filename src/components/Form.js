@@ -1,12 +1,12 @@
-import React, { memo } from "react";
+import React, { memo } from 'react';
 
 const Form = memo(({ todoTitle, setTodoTitle, add, text }) => {
   const handleChange = (e) => setTodoTitle(e.target.value);
 
   const submit = (e) => {
     e.preventDefault();
-    add()
-  }
+    add();
+  };
 
   return (
     <form onSubmit={submit}>
@@ -20,10 +20,10 @@ const Form = memo(({ todoTitle, setTodoTitle, add, text }) => {
         />
       </div>
       <div className="btn-container">
-  <button>{text}</button>
+        <button>{text}</button>
       </div>
     </form>
   );
-})
+});
 
 export default Form;
