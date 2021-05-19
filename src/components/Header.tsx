@@ -3,7 +3,11 @@ import moment from 'moment';
 
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 
-const Header = ({ procent }) => {
+interface HeaderProps {
+  procent: number
+}
+
+const Header: React.FC<HeaderProps> = ({ procent }) => {
   const [date, setDate] = useState(new Date());
 
   useEffect(() => {
@@ -12,11 +16,11 @@ const Header = ({ procent }) => {
     }, 1000);
   }, []);
 
-  const dayNum = (date) => moment(date).format('DD');
-  const month = (date) => moment(date).format('MMMM').slice(0, 3);
-  const fullYear = (date) => moment(date).format('YYYY');
-  const dayOfWeek = (date) => moment(date).format('dddd');
-  const time = (date) => moment(date).format('HH : mm : ss');
+  const dayNum = (date: Date) => moment(date).format('DD');
+  const month = (date: Date) => moment(date).format('MMMM').slice(0, 3);
+  const fullYear = (date: Date) => moment(date).format('YYYY');
+  const dayOfWeek = (date: Date) => moment(date).format('dddd');
+  const time = (date: Date) => moment(date).format('HH : mm : ss');
 
   return (
     <header>

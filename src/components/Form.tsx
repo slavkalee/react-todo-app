@@ -1,9 +1,16 @@
-import React, { memo } from 'react';
+import React, { ChangeEvent, FormEvent, memo } from 'react';
 
-const Form = memo(({ todoTitle, setTodoTitle, add, text }) => {
-  const handleChange = (e) => setTodoTitle(e.target.value);
+interface FormProps {
+  todoTitle: string;
+  setTodoTitle: (title: string) => void;
+  add: () => void;
+  text: string;
+}
 
-  const submit = (e) => {
+const Form: React.FC<FormProps> = memo(({ todoTitle, setTodoTitle, add, text }) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => setTodoTitle(e.target.value);
+
+  const submit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     add();
   };

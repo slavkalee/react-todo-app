@@ -1,7 +1,12 @@
 import React from 'react';
+import { ITodo } from '../redux/reducer/todos';
 import TodoItem from './TodoItem';
 
-const TodoList = ({ data }) => {
+interface TodoListProps {
+  data: ITodo[]
+}
+
+const TodoList: React.FC<TodoListProps> = ({ data }) => {
   return (
     <ul>
       {data.map((item) => (

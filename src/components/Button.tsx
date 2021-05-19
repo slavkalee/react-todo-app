@@ -1,6 +1,10 @@
-import React, { memo } from "react";
+import React, { memo } from 'react';
 
-const Button = memo(({ openModal }) => {
+interface ButtonProps {
+  openModal: () => void;
+}
+
+const Button: React.FC<ButtonProps> = memo(({ openModal }) => {
   return (
     <div className="circle-btn" data-tooltip="Add todo">
       <button className="btn-add" onClick={openModal}>

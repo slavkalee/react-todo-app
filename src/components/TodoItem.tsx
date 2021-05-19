@@ -1,14 +1,15 @@
-import React, { memo, useContext, useState } from 'react';
+import React, { ChangeEvent, FormEvent, memo, useContext, useState } from 'react';
 import { Context } from '../context';
 
 import img from '../assets/delete.svg';
+import { ITodo } from '../redux/reducer/todos';
 
-const TodoItem = memo(({ id, title, completed }) => {
+const TodoItem: React.FC<ITodo> = memo(({ id, title, completed }) => {
   const [edit, setEdit] = useState(false);
   const [newTitle, setNewTitle] = useState(title);
-  const { remove, toggle, change } = useContext(Context);
+  const { remove, toggle, change } = useContext<any>(Context);
 
-  const submit = (e) => {
+  const submit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (newTitle === '') {
       alert('The field cannot be empty!');
@@ -18,11 +19,11 @@ const TodoItem = memo(({ id, title, completed }) => {
     }
   };
 
-  const handleChangeInput = (e) => setNewTitle(e.target.value);
+  const handleChangeInput = (e: ChangeEvent<HTMLInputElement>) => setNewTitle(e.target.value);
 
-  const handleChange = () => toggle(id);
+  const handleChange = (): void => toggle(id);
 
-  const getChange = () => setEdit(!edit);
+  const getChange = (): void => setEdit(!edit);
 
   const cls = ['title-todo'];
 

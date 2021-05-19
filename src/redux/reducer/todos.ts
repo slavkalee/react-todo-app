@@ -3,11 +3,21 @@ import {
   TOGGLE_TODO,
   REMOVE_TODO,
   CHANGE_TODO,
-} from "../actionTypes";
+} from '../actionTypes';
 
-const initialData = [];
+export interface ITodo {
+  id: number;
+  title: string;
+  completed: boolean;
+}
 
-export default function todos(state = initialData, action) {
+const initialData = [
+  { id: 1, title: 'Angular JS', completed: false },
+  { id: 2, title: 'React JS', completed: false },
+  { id: 3, title: 'Vue JS', completed: true },
+];
+
+export default function todos(state: ITodo[] = initialData, action: any) {
   switch (action.type) {
     case ADD_TODO:
       const { title } = action.payload;
