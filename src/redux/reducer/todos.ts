@@ -33,6 +33,7 @@ export default function todos(state: ITodo[] = initialData, action: any) {
       return state.map((todo) => {
         if (todo.id === action.payload.id) {
           todo.title = action.payload.text;
+          todo.completed = false
         }
         return todo;
       });

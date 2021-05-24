@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Deploy version - [https://stoic-kirch-0c025d.netlify.app](https://stoic-kirch-0c025d.netlify.app)
 
 ## Available Scripts
 
